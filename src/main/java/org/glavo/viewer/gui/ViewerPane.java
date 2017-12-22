@@ -1,6 +1,7 @@
 package org.glavo.viewer.gui;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import lombok.Getter;
 
 public final class ViewerPane extends BorderPane {
@@ -15,5 +16,6 @@ public final class ViewerPane extends BorderPane {
         this.viewer = viewer;
         menuBar = new ViewerMenuBar(viewer);
         toolBar = new ViewerToolBar(viewer);
+        this.setTop(new VBox(menuBar, toolBar));
     }
 }

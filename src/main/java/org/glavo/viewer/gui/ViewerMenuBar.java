@@ -1,8 +1,7 @@
 package org.glavo.viewer.gui;
 
+import javafx.scene.control.MenuBar;
 import lombok.Getter;
-
-import java.awt.*;
 
 public final class ViewerMenuBar extends MenuBar {
     @Getter
