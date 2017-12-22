@@ -1,7 +1,10 @@
 package org.glavo.viewer.util;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.regex.Pattern;
 
+@UtilityClass
 public class StringUtils {
 
     public static final String[] arr = new String[256];

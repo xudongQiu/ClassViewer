@@ -1,8 +1,11 @@
 package org.glavo.viewer.util;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.Objects;
 
-public class Logger {
+@UtilityClass
+public final class Logger {
     public static boolean color = !System.getProperty("os.name").toLowerCase().contains("win");
 
     static {

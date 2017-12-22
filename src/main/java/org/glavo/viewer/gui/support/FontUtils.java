@@ -11,8 +11,10 @@ public class FontUtils {
         Logger.log("loading fonts...");
     }
 
-
     public static Font uiFont = Font.loadFont(FontUtils.class.getResourceAsStream("/fonts/UI.ttf"), 15);
 
     public static Font textFont = Font.loadFont(FontUtils.class.getResourceAsStream("/fonts/Text.ttf"), 15);
+
+    public static void init() {
+    }
 }

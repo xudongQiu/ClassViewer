@@ -1,9 +1,12 @@
 package org.glavo.viewer.util;
 
+import lombok.experimental.UtilityClass;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+@UtilityClass
 public class UrlUtils {
 
     public static byte[] readData(URL url) throws IOException {
