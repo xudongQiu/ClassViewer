@@ -1,15 +1,11 @@
 package org.glavo.viewer.gui.support;
 
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.prefs.BackingStoreException;
@@ -39,7 +35,7 @@ public class RecentFiles {
                 try {
                     return new File(rf.url.toURI());
                 } catch (URISyntaxException e) {
-                    Log.log(e);
+                    Logger.log(e);
                 }
             }
         }
@@ -53,7 +49,7 @@ public class RecentFiles {
                 try {
                     return new File(rf.url.toURI());
                 } catch (URISyntaxException e) {
-                    Log.log(e);
+                    Logger.log(e);
                 }
             }
         }
@@ -85,14 +81,14 @@ public class RecentFiles {
 
     private void save() {
         Preferences preferences = Preferences.userNodeForPackage(RecentFiles.class);
-        Log.log("saving recent files...");
+        Logger.log("saving recent files...");
         preferences.put("recentfiles", list.stream()
                 .map(RecentFile::toString)
                 .collect(Collectors.joining("\n")));
         try {
             preferences.flush();
         } catch (BackingStoreException e) {
-            Log.log(e);
+            Logger.log(e);
         }
     }
 
@@ -100,13 +96,13 @@ public class RecentFiles {
         Preferences preferences = Preferences.userNodeForPackage(RecentFiles.class);
         String data = preferences.get("recentfiles", null);
         if (data != null) {
-            Log.log("loading recent files..");
+            Logger.log("loading recent files..");
             for (String line : data.split("\n")) {
                 if (line.contains("#=>")) {
                     try {
                         list.addLast(new RecentFile(line));
                     } catch (MalformedURLException | IllegalArgumentException e) {
-                        Log.log(e);
+                        Logger.log(e);
                     }
                 }
             }

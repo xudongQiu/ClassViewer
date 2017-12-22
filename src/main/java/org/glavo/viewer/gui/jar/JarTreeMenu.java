@@ -3,12 +3,11 @@ package org.glavo.viewer.gui.jar;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
-import javafx.scene.control.TreeItem;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.glavo.viewer.gui.Viewer;
 import org.glavo.viewer.gui.support.ImageUtils;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -51,7 +50,7 @@ public class JarTreeMenu extends ContextMenu {
                             new URL(String.format("jar:%s!%s", view.jarURL, item.path).replace('\\', '/'))
                     );
                 } catch (MalformedURLException e) {
-                    Log.log(e);
+                    Logger.log(e);
                 }
             }
         });

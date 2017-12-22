@@ -13,7 +13,7 @@ import org.glavo.viewer.gui.directory.DirectoryTreeNode;
 import org.glavo.viewer.gui.jar.JarTreeLoader;
 import org.glavo.viewer.gui.jar.JarTreeNode;
 import org.glavo.viewer.gui.parsed.HexText;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 import org.glavo.viewer.util.UrlUtils;
 
 public class OpenFileTask extends Task<OpenFileResult> {
@@ -30,7 +30,7 @@ public class OpenFileTask extends Task<OpenFileResult> {
 
     @Override
     protected OpenFileResult call() throws Exception {
-        Log.log("loading " + url + "...");
+        Logger.log("loading " + url + "...");
 
         FileType fileType = getFileType(url);
         if (fileType == FileType.FOLDER) {
@@ -52,7 +52,7 @@ public class OpenFileTask extends Task<OpenFileResult> {
         FileComponent fc = parse(data, fileType);
         fc.setName(UrlUtils.getFileName(url));
 
-        Log.log("finish loading");
+        Logger.log("finish loading");
         return new OpenFileResult(url, fileType, fc, hex);
     }
 
@@ -99,7 +99,7 @@ public class OpenFileTask extends Task<OpenFileResult> {
     public void setOnFailed(Consumer<Throwable> callback) {
         super.setOnFailed(event -> {
             Throwable err = event.getSource().getException();
-            Log.log(err);
+            Logger.log(err);
 
             callback.accept(err);
         });

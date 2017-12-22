@@ -2,7 +2,7 @@ package org.glavo.viewer.util;
 
 import java.util.Objects;
 
-public class Log {
+public class Logger {
     public static boolean color = !System.getProperty("os.name").toLowerCase().contains("win");
 
     static {

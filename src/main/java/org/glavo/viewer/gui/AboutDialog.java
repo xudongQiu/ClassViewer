@@ -8,7 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.glavo.viewer.gui.support.ImageUtils;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 import java.awt.*;
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class AboutDialog {
             try {
                 Desktop.getDesktop().browse(URI.create(homeUrl));
             } catch (IOException x) {
-                Log.log(x);
+                Logger.log(x);
             }
         });
 

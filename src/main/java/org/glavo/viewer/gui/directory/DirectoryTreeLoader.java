@@ -4,16 +4,12 @@ import javafx.scene.image.ImageView;
 import org.glavo.viewer.gui.jar.JarTreeLoader;
 import org.glavo.viewer.gui.jar.JarTreeNode;
 import org.glavo.viewer.gui.support.FileType;
-import org.glavo.viewer.gui.support.ImageUtils;
-import org.glavo.viewer.util.Log;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.EnumSet;
-import java.util.HashMap;
 
 public class DirectoryTreeLoader {
 

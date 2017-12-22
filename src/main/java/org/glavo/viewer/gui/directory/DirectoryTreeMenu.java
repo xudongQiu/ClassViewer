@@ -10,7 +10,7 @@ import org.glavo.viewer.gui.MyTreeNode;
 import org.glavo.viewer.gui.Viewer;
 import org.glavo.viewer.gui.jar.JarTreeNode;
 import org.glavo.viewer.gui.support.ImageUtils;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -52,7 +52,7 @@ public class DirectoryTreeMenu extends ContextMenu {
                 try {
                     viewer.openFileInThisThread(new URL(c));
                 } catch (MalformedURLException e) {
-                    Log.log(e);
+                    Logger.log(e);
                 }
             }
         });

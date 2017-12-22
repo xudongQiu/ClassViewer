@@ -2,25 +2,20 @@ package org.glavo.viewer.gui;
 
 import javafx.application.Application;
 import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
-import org.glavo.viewer.gui.directory.DirectoryTreeNode;
 import org.glavo.viewer.gui.directory.DirectoryTreeView;
 import org.glavo.viewer.gui.jar.JarTreeView;
 import org.glavo.viewer.gui.parsed.ParsedViewerPane;
 import org.glavo.viewer.gui.support.*;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 import org.glavo.viewer.util.UrlUtils;
 import org.glavo.viewer.gui.support.FontUtils;
 
@@ -96,7 +91,7 @@ public class Viewer extends Application {
                 try {
                     openFileInThisThread(new File(file).toURI().toURL());
                 } catch (MalformedURLException e) {
-                    Log.log(e);
+                    Logger.log(e);
                 }
             }
         }
@@ -215,7 +210,7 @@ public class Viewer extends Application {
         try {
             openFile(file.toURI().toURL());
         } catch (MalformedURLException e) {
-            Log.log(e);
+            Logger.log(e);
         }
     }
 
@@ -270,7 +265,7 @@ public class Viewer extends Application {
         try {
             openFile(new URL(url));
         } catch (MalformedURLException e) {
-            Log.log(e);
+            Logger.log(e);
         }
     }
 

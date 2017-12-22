@@ -1,21 +1,13 @@
 package org.glavo.viewer.gui.directory;
 
-import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import org.glavo.viewer.gui.MyTreeNode;
 import org.glavo.viewer.gui.jar.JarTreeNode;
 import org.glavo.viewer.gui.support.FileType;
-import org.glavo.viewer.gui.support.ImageUtils;
-import org.glavo.viewer.util.Log;
 
-import javax.swing.tree.TreeNode;
-import java.io.File;
-import java.net.URI;
 import java.net.URL;
-import java.nio.file.FileSystemNotFoundException;
-import java.nio.file.FileSystems;
 import java.util.function.Consumer;
 
 public class DirectoryTreeView extends TreeView<MyTreeNode> {

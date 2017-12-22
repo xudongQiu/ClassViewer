@@ -7,7 +7,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.BorderPane;
 import org.glavo.viewer.FileComponent;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 /**
  * Container of TreeView, HexPane, StatusBar and BytesBar.
@@ -70,7 +70,7 @@ public class ParsedViewerPane extends BorderPane {
                         TreeItem<FileComponent> node = c.getList().get(c.getFrom());
                         if (node != null && node.getParent() != null) {
                             FileComponent cc = node.getValue();
-                            Log.log("select " + cc);
+                            Logger.log("select " + cc);
                             statusLabel.setText(cc.toString());
                             if (cc.getLength() > 0) {
                                 hexPane.select(cc);

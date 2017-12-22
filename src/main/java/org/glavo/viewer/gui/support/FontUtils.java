@@ -1,14 +1,14 @@
 package org.glavo.viewer.gui.support;
 
 import javafx.scene.text.Font;
-import org.glavo.viewer.util.Log;
+import org.glavo.viewer.util.Logger;
 
 public class FontUtils {
     private FontUtils() {
     }
 
     static {
-        Log.log("loading fonts...");
+        Logger.log("loading fonts...");
     }
 
 
